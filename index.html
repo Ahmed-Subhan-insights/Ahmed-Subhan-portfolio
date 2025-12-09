@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Subhan — Portfolio</title>
+  <style>
+    :root {
+      --accent: #b46a2c;
+      --white: #ffffff;
+      --muted: #4a4a4a;
+      --muted-2: #7a7a7a;
+      --surface: #fefcf8;
+      --card-border: #e0dcdc;
+      --background: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --accent: #b46a2c;
+      --white: #ffffff;
+      --muted: #ddd;
+      --muted-2: #aaa;
+      --surface: #222;
+      --card-border: #333;
+      --background: #111;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Arial', sans-serif; background: var(--background); color: var(--muted); line-height: 1.5; }
+    a { text-decoration: none; color: inherit; display: block; }
+
+    .container { width: 100%; max-width: 1200px; margin: auto; padding: 20px; }
+
+    .topbar { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+    .row { display: flex; gap: 12px; align-items: center; }
+    .theme-toggle { padding: 8px 12px; cursor: pointer; border-radius: 6px; border: 1px solid var(--card-border); background: var(--surface); color: var(--muted); }
+
+    /* HERO */
+    .hero { display: flex; gap: 24px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .hero img.portrait { width: 200px; height: 200px; border-radius: 999px; object-fit: contain;  background-color: var(--background);
+} }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--muted); }
+    .hero .role { font-weight: 500; font-size: 1rem; margin-bottom: 16px; }
+
+    .actions { margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn { padding:10px 16px; border-radius:10px; font-weight:700; display:inline-flex; align-items:center; gap:8px; font-size:14px; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn.primary { background:var(--accent); color:var(--white); border:1px solid rgba(0,0,0,0.06); }
+    .btn.ghost { background:transparent; border:1px solid var(--card-border); color:var(--muted); }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+
+    .btn svg { width:16px; height:16px; fill:currentColor; }
+
+    /* Grid layout */
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; }
+    main, aside { width: 100%; }
+    .card { background:var(--surface); padding:18px; border-radius:10px; border:1px solid var(--card-border); color:var(--muted); margin-bottom:28px; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-2px); box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+    .card h2 { margin-bottom:12px; color:var(--muted); }
+    .timeline { display:flex; flex-direction:column; gap:12px; }
+    .timeline-item { background:transparent; padding:12px; border-radius:8px; border-left:4px solid rgba(138,110,90,0.12); }
+    .timeline-item strong { display:block; color:var(--muted); }
+    .muted { color:var(--muted-2); font-size:14px; }
+    .muted-block { color:var(--muted-2); font-size:14px; margin-top:6px; }
+
+    /* Projects */
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .project { padding:12px; border-radius:8px; background:linear-gradient(180deg, rgba(138,110,90,0.03), transparent); border:1px solid var(--card-border); transition: transform 0.2s, box-shadow 0.2s; }
+    .project:hover { transform: translateY(-2px); box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+    .project strong { color: var(--accent); }
+
+    /* Skills */
+    .skill-pill { display:inline-block; padding:6px 10px; background:linear-gradient(90deg,rgba(181,168,153,0.08),transparent); border-radius:999px; margin:6px 6px 0 0; color:var(--muted); font-size:13px; font-weight:600; }
+
+    footer { margin-top:36px; color:var(--muted-2); padding:20px 0; text-align:center; font-size:14px; }
+
+    /* Responsive */
+    @media (max-width:960px){
+      .grid{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr;}
+      .hero{flex-direction:column;align-items:flex-start;}
+      .portrait{width:140px;height:140px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app" data-theme="light">
+    <div class="topbar">
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false">Switch to Dark</button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" role="region" aria-label="Intro">
+      <img class="portrait" src="profile_ahmed_subhan.png" alt="Portrait — Ahmed Subhan" />
+      <div>
+        <h1>AHMED SUBHAN</h1>
+        <div class="role">Pursuing career in Financial Advisory & Consulting — Founder & CEO, Magnus Strategies & Solutions</div>
+        <div class="actions">
+          <a class="btn primary" href="cv_ahmed_subhan.pdf" download>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l5-5h-3V4h-4v5H7l5 5z"/></svg>
+            CV
+          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/ahmed-subhan" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.7v2.3h.1c.7-1.3 2.4-2.7 4.9-2.7 5.3 0 6.3 3.5 6.3 8V24h-5v-7c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.6V24h-5V8z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn ghost" href="https://github.com/Ahmed-Subhan-insights" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.5-1.8-1.5-1.8-1.2-.8.1-.8.1-.8 1.4.1 2.1 1.4 2.1 1.4 1.2 2.1 3.1 1.5 3.9 1.1.1-.9.5-1.5.8-1.8-2.7-.3-5.5-1.4-5.5-6.3 0-1.4.5-2.6 1.3-3.5-.1-.3-.6-1.5.1-3.1 0 0 1-.3 3.3 1.3.9-.2 1.9-.3 2.9-.3s2 .1 2.9.3c2.3-1.6 3.3-1.3 3.3-1.3.7 1.6.2 2.8.1 3.1.8.9 1.3 2.1 1.3 3.5 0 4.9-2.8 6-5.5 6.3.5.4.9 1.2.9 2.5v3.7c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a class="btn ghost" href="mailto:ehmadsubhan01@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 13.065L0 6V18h24V6l-12 7.065zM12 11L0 4l12 7 12-7-12 7z"/></svg>
+            Email
+          </a>
+          <a class="btn ghost" href="tel:+923402800524">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H7a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
+            Phone
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <div class="grid" role="main">
+      <main>
+        <!-- Research Publications & Projects -->
+        <section class="card" id="projects" aria-labelledby="proj-h">
+          <h2 id="proj-h">Research Publications & Projects</h2>
+          <div class="projects" role="list">
+            <div class="project" role="listitem">
+              <a href="https://www.linkedin.com/posts/ahmed-subhan_global-industry-wacc-debt-activity-7374516954801463296-NWjB?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank">
+                <strong>Global Industry Cost of Capital & Debt Flow Dynamics</strong>
+                <div class="muted-block">Cross-market analysis of cost of capital and sectoral debt flows.</div>
+              </a>
+            </div>
+            <div class="project" role="listitem">
+              <a href="https://www.linkedin.com/posts/ahmed-subhan_gold-returns-macro-drivers-a-quantitative-activity-7359256414218792960-bjGV?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank">
+                <strong>Gold & Macro — 20-Year Quantitative Analysis</strong>
+                <div class="muted-block">A two-decade quantitative study of gold returns vs macro indicators.</div>
+              </a>
+            </div>
+            <div class="project" role="listitem">
+              <a href="https://www.linkedin.com/posts/ahmed-subhan_temporal-lag-effects-and-multicollinearity-activity-7360339379854159872-MO2q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank">
+                <strong>Temporal Lag Effects & Multicollinearity</strong>
+                <div class="muted-block">Methodology research on temporal lag selection and multicollinearity in time-series models.</div>
+              </a>
+            </div>
+            <div class="project" role="listitem">
+              <a href="https://www.linkedin.com/posts/ahmed-subhan_gold-to-silver-ratio-activity-7370466551940079617-B54B?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank">
+                <strong>Gold to Silver Ratio — Is Silver the Forgotten Opportunity?</strong>
+                <div class="muted-block">Comparative ratio strategy and opportunity assessment.</div>
+              </a>
+            </div>
+            <div class="project" role="listitem">
+              <a href="https://www.linkedin.com/posts/ahmed-subhan_financialmodeling-exceldashboard-wacc-activity-7391918201632088066-Mrkq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank">
+                <strong>Interactive Weighted Average Cost of Capital (WACC) Dashboard</strong>
+                <div class="muted-block">A fully interactive WACC Dashboard built entirely in Excel for finance professionals.</div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+         <!-- Experience -->
+        <section class="card" id="experience" aria-labelledby="exp-h">
+          <h2 id="exp-h">Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Founder & CEO — Magnus Strategies & Solutions (Islamabad)</strong>
+              <div class="muted">May 2024 — Present</div>
+              <div class="muted-block">Provide financial advisory, UK & Pakistan tax services, accounting and bookkeeping solutions for SMEs and high-growth businesses. Manage UK, US and Pakistani clients for financial modelling, management reporting, and strategic decision support.</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Accounts Associate — ACGILE (NetSuite Solutions), Islamabad</strong>
+              <div class="muted">2024 — 2025</div>
+              <div class="muted-block">Handled bank & vendor reconciliations, profitability reporting, ERP & QuickBooks workflows, and A/P processes for multiple clients.</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Internee — MCB Corporate Branch (Blue Area, Islamabad)</strong>
+              <div class="muted">Earlier</div>
+              <div class="muted-block">Experience in clearing, RTGS, trade operations and credit risk fundamentals.</div>
+            </div>
+            <div class="timeline-item">
+              <strong>Financial Manager — Family Livestock & Agri Business</strong>
+              <div class="muted">Ongoing</div>
+              <div class="muted-block">Oversaw end-to-end financial operations from production to sale, improving margin and scaling processes.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="card" id="education" aria-labelledby="edu-h">
+          <h2 id="edu-h">Education</h2>
+          <div class="muted-block"><strong>ACCA — Finalist</strong></div>
+          <div class="muted-block"><strong>FSc</strong> — 89.5%</div>
+          <div class="muted-block"><strong>Matric</strong> — 92%</div>
+        </section>
+      </main>
+
+      <aside>
+        <!-- Skills -->
+        <section class="card" id="skills">
+          <h2>Skills & Tech</h2>
+          <div>
+            <span class="skill-pill">Financial Modeling</span>
+            <span class="skill-pill">Quantitative Analysis</span>
+            <span class="skill-pill">Data Analysis</span>
+            <span class="skill-pill">MS Office</span>
+            <span class="skill-pill">QuickBooks</span>
+            <span class="skill-pill">Communication</span>
+          </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="card" id="certs">
+          <h2>Certifications</h2>
+          <div class="muted-block">MS Office — ARTT (ICAP)</div>
+          <div class="muted-block">Presentation & Personality — SBM (ICAP)</div>
+          <div class="muted-block">Financial Modeling — Coursera / Bootcamp</div>
+        </section>
+
+        <!-- Speaking Engagements -->
+<a href="https://www.linkedin.com/posts/ahmed-subhan_globalentrepreneurshipweek-gew2025-emergingmarkets-activity-7400056813213265920-puhU?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdqX7QB1EQF-i66gPYFw2QohTAO-uZNtAA" target="_blank" style="text-decoration: none; color: inherit;">
+  <section class="card" id="speaking">
+    <h2>Speaking Engagements</h2>
+    <div class="muted-block">
+      <strong>Guest Speaker</strong> — Global Entrepreneurship Week, Vilnius Kolegija (VIKO) — Nov 20, 2025
+    </div>
+    <div class="muted-block">
+      Topic: Smart SME Growth in Emerging Markets — Strategic Financing & Governance Frameworks
+    </div>
+  </section>
+</a>
+
+        <!-- Company -->
+        <section class="card" id="magnus">
+          <h2>Magnus Strategies & Solutions</h2>
+          <div class="muted-block"><strong>Boutique financial advisory</strong></div>
+          <div class="muted-block">Services: Advisory, Research, Tax Structuring, Accounting & Strategic Planning for SMEs (PK / UK / US).</div>
+          <div style="margin-top:12px"><a class="btn primary" href="mailto:ehmadsubhan01@gmail.com">Contact Magnus</a></div>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 Ahmed Subhan — Built with intent • Theme: Photo-derived Taupe
+    </footer>
+  </div>
+
+  <script>
+    const app = document.getElementById('app');
+    const toggle = document.getElementById('themeToggle');
+    let theme = 'light';
+
+    function applyTheme(){
+      app.setAttribute('data-theme', theme);
+      if(theme === 'dark'){
+        toggle.textContent = 'Switch to Light';
+        toggle.setAttribute('aria-pressed','true');
+      } else {
+        toggle.textContent = 'Switch to Dark';
+        toggle.setAttribute('aria-pressed','false');
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      theme = theme === 'light' ? 'dark' : 'light';
+      applyTheme();
+      try { localStorage.setItem('site-theme', theme); } catch(e) {}
+    });
+
+    try {
+      const saved = localStorage.getItem('site-theme');
+      if(saved === 'dark' || saved === 'light'){ theme = saved; }
+    } catch(e){ }
+    applyTheme();
+  </script>
+</body>
+</html>
